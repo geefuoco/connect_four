@@ -53,5 +53,31 @@ describe Grid do
     end
   end
 
+  describe "#get_connected_tokens" do
+
+    context "when there are 4 horizontal tokens" do
+      
+      before do
+        grid.place_token(1, 1, "white")
+        grid.place_token(2, 1, "white")
+        grid.place_token(3, 1, "white")
+        grid.place_token(4, 1, "white")
+      end
+
+      it "returns true" do
+
+        expect(grid.get_connected_tokens).to be true
+      end
+    end
+
+    context "when there is not 4 connected tokens" do
+      it "returns falsey value" do
+        expect(grid.get_connected_tokens).to be_falsey
+      end
+    end
+
+  end
+        
+
 
 end

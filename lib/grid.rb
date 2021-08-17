@@ -28,6 +28,10 @@ class Grid
     token.update_cell(color)
   end
 
+  def get_connected_tokens
+    true
+            
+  end
 
   private
   def build_grid
