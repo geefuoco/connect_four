@@ -30,11 +30,17 @@ class Game
     puts "\e[33mThat row is full ! Try again\e[0m"
   end
 
+  def start_of_game
+    grid.print_grid
+    puts
+    puts "\e[36m#{players[0].name}'s turn.\e[0m"
+    puts "Input a number from 1-7"
+    puts
+  end
+
   def game_loop
     until game_over? 
-      grid.print_grid
-      puts "\e[36m#{players[0].name}'s turn.\e[0m"
-      puts "Input a number from 1-7"
+      start_of_game()
       player_move_full = grid.place_token(players[0].get_move.to_i, players[0].color)
       while player_move_full do
         handle_full_column()

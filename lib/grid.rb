@@ -15,15 +15,18 @@ class Grid
 
 
   def print_grid
-    puts  " -----------------------"
+    puts
     for i in 0..GRID_ROWS do
       for j in 0..GRID_COLUMNS do
+        
         print "  #{@board[i][j]}  "
+        
       end
       puts
+      puts
     end
-    puts  " -----------------------"
-    print " 1   2   3   4   5   6   7\n"
+    
+    print "   1     2     3     4     5     6     7\n"
   end
 
   def place_token(column, symbol)
